@@ -8,7 +8,10 @@ RUN apk add py-pip curl && \
  chmod +x ./kubectl && \
  mv ./kubectl /usr/bin/kubectl && \
  curl -Lo /usr/local/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 && \
- chmod +x /usr/local/bin/jq
+ chmod +x /usr/local/bin/jq && \
+
 
 COPY entrypoint.sh /entrypoint.sh
+COPY green.yaml /green.yaml
+COPY blue.yaml /blue.yaml
 ENTRYPOINT ["/entrypoint.sh"]
