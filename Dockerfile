@@ -7,7 +7,8 @@ RUN apk add py-pip curl && \
  chmod +x /usr/local/bin/aws-iam-authenticator && \
  chmod +x ./kubectl && \
  mv ./kubectl /usr/bin/kubectl && \
- pip install jq
+ curl -LO /usr/local/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 && \
+ chmod +x /usr/local/bin/jq
 
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
