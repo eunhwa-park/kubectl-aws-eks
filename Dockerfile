@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.13.5
 
 RUN apk add py-pip curl && \
  pip install awscli && \
