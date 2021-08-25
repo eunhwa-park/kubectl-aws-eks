@@ -12,4 +12,5 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s 
 COPY entrypoint.sh /entrypoint.sh
 COPY green.yaml /green.yaml
 COPY blue.yaml /blue.yaml
+COPY canary.yaml /canary.yaml
 ENTRYPOINT ["/entrypoint.sh"]
